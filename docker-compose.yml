@@ -10,23 +10,23 @@ services:
     #links:
       #- app1
 
-  app1:
+  app_front:
     depends_on:
       - db
-    image: tomcat:8.0
+    image: openjdk:8
+    volumes:
+      - ./app/src:/app
+    ports:
+      - "3000:3000"
+
+  app_back:
+    depends_on:
+      - db
+    image: openjdk:8
     volumes:
       - ./app/src:/app
     ports:
       - "8081:8080"
-
-  app2:
-    depends_on:
-      - db
-    image: tomcat:8.0
-    volumes:
-      - ./app/src:/app
-    ports:
-      - "8082:8080"
 
   db:
     image: mysql:5.7
