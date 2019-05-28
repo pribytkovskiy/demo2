@@ -1,7 +1,9 @@
-FROM python:2.7-slim
-ENV PYTHONUNBUFFERED 1
-RUN pip install Django==1.9.7
-RUN mkdir /app
-ADD ./src /app
-WORKDIR /app
-EXPOSE 8000
+FROM maven:3.6.1-jdk-8-alpine
+
+WORKDIR /backend/src
+
+RUN sh -c 'mvnw install'
+
+ENTRYPOINT ["mvnw","spring-boot:run","-f","./server/"]  
+
+CMD ["mvn"]
