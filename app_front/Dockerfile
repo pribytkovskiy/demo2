@@ -1,9 +1,9 @@
-FROM node:12
+FROM node:8
 
 COPY . .
 
-RUN npm install -g nodemon
+RUN npm install
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "npm", "start" ]
