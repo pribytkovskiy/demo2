@@ -1,5 +1,5 @@
-export const ONLINE_API_URL = process.env.NODE_ENV === 'production' ? 'http://nginx_back:8000/api' : 'http://nginx_back:8000/api';
-export const OFFLINE_API_URL = 'http://nginx_back:8000/api';
+export const ONLINE_API_URL = process.env.NODE_ENV === 'production' ? 'http://lb_back:8000/api' : 'http://lb_back:8000/api';
+export const OFFLINE_API_URL = 'http://lb_back:8000/api';
 export const ACCESS_TOKEN = 'Jwt Token';
 export const EMAIL_MAX_LENGTH = 255;
 export const NAME_MIN_LENGTH = 2;

@@ -38,7 +38,7 @@ services:
     volumes:
       - ./src:/app
     ports:
-      - "3001:3001"
+      - "3001:3000"
     tty: true
 
   app_back1:
@@ -55,13 +55,12 @@ services:
 
   app_back2:
     container_name: app_back2
-    image: openjdk:8
-    volumes:
-      - ./src:/app
+    build:
+      context: ./app_back
+      dockerfile: ./Dockerfile
+    image: app_back2
     ports:
       - "8081:8080"
-    depends_on:
-      - db
     tty: true
 
   db:
@@ -69,7 +68,7 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - ./database:/var/lib/mysql
+      - ./database:/var/lib/mysql mysql
     ports:
       - "3306:3306"
     env_file: 
@@ -86,12 +85,3 @@ services:
     restart: always
     ports:
       - 6080:8080
-
-  jenkins:
-    container_name: jenkins
-    image: 'jenkins/jenkins:2.164'
-    volumes:
-      - .:/home/jenkins
-    restart: always
-    ports:
-      - '8080:8080'
