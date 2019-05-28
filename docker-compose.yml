@@ -43,9 +43,10 @@ services:
 
   app_back1:
     container_name: app_back1
-    image: openjdk:8
-    volumes:
-      - ./backend:/app
+    build:
+      context: ./app_back
+      dockerfile: ./Dockerfile
+    image: app_back1
     ports:
       - "8081:8080"
     depends_on:
@@ -62,7 +63,7 @@ services:
     depends_on:
       - db
     tty: true
-    
+
   db:
     container_name: db
     image: mysql:5.7
