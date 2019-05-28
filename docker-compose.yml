@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.3'
 
 services:
   lb_front:
@@ -73,11 +73,12 @@ services:
       - ./database:/var/lib/mysql
     ports:
       - "3306:3306"
+      env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: bike_championship
       MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
   adminer:
     container_name: adminer
@@ -89,6 +90,8 @@ services:
   jenkins:
     container_name: jenkins
     image: 'jenkins/jenkins:2.164'
+    volumes:
+      - .:/home/jenkins
     restart: always
     ports:
       - '8080:8080'
