@@ -1,0 +1,24 @@
+pipeline {
+    agent { 
+        node { label 'node1' }                     
+    }
+    stages {
+        stage('Check out bikeChampionship') {
+            steps {
+                git branch: 'master',
+                url: 'https://github.com/pribytkovskiy/bikeChampionship.git'
+            }
+        }
+        stage('Check out project') {
+            steps {
+                git branch: 'master',
+                url: 'https://github.com/pribytkovskiy/demo2.git'
+            }
+        }
+        stage('Up docker-compose') {
+            steps {
+                sh 'sudo docker-compose up -d'
+            }
+        }
+    }
+}
