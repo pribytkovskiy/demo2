@@ -643,3 +643,11 @@ Ubuntu 16.04.6 LTS docker ttyS0
 
 docker login: [   15.308310] cloud-init[2467]: Cloud-init v. 18.5-45-g3554ffe8-0ubuntu1~16.04.1 running 'modules:final' at Wed, 29 May 2019 09:13:32 +0000. Up 15.18 seconds.
 [   15.308653] cloud-init[2467]: Cloud-init v. 18.5-45-g3554ffe8-0ubuntu1~16.04.1 finished at Wed, 29 May 2019 09:13:33 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 15.29 seconds
+[11593.136245] Out of memory: Kill process 2353 (java) score 269 or sacrifice child
+[11593.137774] Killed process 2353 (java) total-vm:3159208kB, anon-rss:550092kB, file-rss:0kB
+[12207.951443] Out of memory: Kill process 20824 (java) score 183 or sacrifice child
+[12207.952575] Killed process 20824 (java) total-vm:3082684kB, anon-rss:374656kB, file-rss:0kB
+[12813.414598] Out of memory: Kill process 21752 (java) score 187 or sacrifice child
+[12813.417248] Killed process 21752 (java) total-vm:3108360kB, anon-rss:383708kB, file-rss:0kB
+[13563.264583] Out of memory: Kill process 23440 (java) score 183 or sacrifice child
+[13563.266105] Killed process 23440 (java) total-vm:3104264kB, anon-rss:375320kB, file-rss:0kB
