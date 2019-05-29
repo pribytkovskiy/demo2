@@ -9,29 +9,18 @@ pipeline {
                 url: 'https://github.com/pribytkovskiy/demo2.git'
             }
         }
-        stage('Build app_back1') {
+        stage('Build app_back') {
             steps {
                 sh 'cp -a ./src/frontend/. ./'
                 sh 'cp -a ./app_front/. ./'
                 sh 'docker build -t drtrem/app_front1 .'
             }
         }
-    }
-}
-
-pipeline {
-    agent { 
-        node { label 'node1' }                     
-    }
-    stages {
-        stage('Check out project') {
-            steps {
-                git branch: 'master',
-                url: 'https://github.com/pribytkovskiy/demo2.git'
-            }
-        }
         stage('Up docker-compose') {
             steps {
+                sh 'cp -a ./src/backend/. ./'
+                sh 'cp -a ./app_back/. ./'
+                sh 'cp -a ./src/backend/. ./app_back/'
                 sh 'sudo docker-compose up -d'
             }
         }
