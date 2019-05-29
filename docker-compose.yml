@@ -8,7 +8,7 @@ services:
       - "80:80"
     volumes:
       - ./nginx_front/nginx.conf:/etc/nginx/nginx.conf
-    command: bash -c "sudo services nginx restart"
+    command: bash -c "service nginx restart"
     depends_on:
       - app_front1
       - app_front2
