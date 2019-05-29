@@ -9,6 +9,7 @@ services:
     volumes:
       - ./nginx_back/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
+      - db
       - app_back1
       - app_back2
 
@@ -20,8 +21,6 @@ services:
     image: app_back1
     ports:
       - "8081:8080"
-    depends_on:
-      - db
     tty: true
 
   app_back2:
@@ -32,8 +31,6 @@ services:
     image: app_back2
     ports:
       - "8081:8080"
-    depends_on:
-      - db
     tty: true
 
   db:
