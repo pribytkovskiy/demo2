@@ -9,7 +9,7 @@ pipeline {
                 url: 'https://github.com/pribytkovskiy/demo2.git'
             }
         }
-        stage('Build app_back') {
+        stage('Build app_front') {
             steps {
                 sh 'cp -a ./src/frontend/. ./'
                 sh 'cp -a ./app_front/. ./'
