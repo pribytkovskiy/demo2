@@ -25,18 +25,14 @@ services:
 
   app_front1:
     container_name: app_front1
-    image: node:8
-    volumes:
-      - ./src:/app
+    image: drtrem/app_front1:latest
     ports:
       - "3000:3000"
     tty: true
 
   app_front2:
     container_name: app_front2
-    image: node:8
-    volumes:
-      - ./src:/app
+    image: drtrem/app_front1:latest
     ports:
       - "3001:3000"
     tty: true
