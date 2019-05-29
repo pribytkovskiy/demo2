@@ -39,6 +39,7 @@ services:
     restart: always
     volumes:
       - ./database:/var/lib/mysql mysql
+      - ./db:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
     env_file: 
@@ -48,8 +49,6 @@ services:
       MYSQL_DATABASE: bike_championship
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-    command: mysql -uroot -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;"
-    command: mysql -uroot -proot -e "FLUSH PRIVILEGES;"
 
   adminer:
     container_name: adminer

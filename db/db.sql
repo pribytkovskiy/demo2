@@ -1,0 +1,2 @@
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+mysql -uroot -proot -e "FLUSH PRIVILEGES;
