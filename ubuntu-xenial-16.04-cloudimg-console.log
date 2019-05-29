@@ -715,4 +715,5 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCjeyNCmZ8Rjg1kPBbySONzrETO/7AyL4E310BMpCE
 
 Ubuntu 16.04.6 LTS ubuntu-xenial ttyS0
 
-ubuntu-xenial login: 
+ubuntu-xenial login: [693760.928132] Out of memory: Kill process 29450 (java) score 322 or sacrifice child
+[693760.940967] Killed process 29450 (java) total-vm:3232952kB, anon-rss:658376kB, file-rss:0kB

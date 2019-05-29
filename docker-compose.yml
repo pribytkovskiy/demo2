@@ -21,7 +21,7 @@ services:
       - ./nginx_back/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - app_back1
-      - app_back2
+    #  - app_back2
 
   app_front1:
     container_name: app_front1
@@ -49,17 +49,17 @@ services:
       - db
     tty: true
 
-  app_back2:
-    container_name: app_back2
-    build:
-      context: ./app_back
-      dockerfile: ./Dockerfile
-    image: app_back2
-    ports:
-      - "8081:8080"
-    depends_on:
-      - db
-    tty: true
+  #app_back2:
+  #  container_name: app_back2
+  #  build:
+  #    context: ./app_back
+  #    dockerfile: ./Dockerfile
+  #  image: app_back2
+  #  ports:
+  #    - "8081:8080"
+  #  depends_on:
+  #    - db
+  #  tty: true
 
   db:
     container_name: db
